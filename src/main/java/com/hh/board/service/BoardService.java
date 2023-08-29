@@ -2,8 +2,6 @@ package com.hh.board.service;
 
 import com.hh.board.entity.board.Board;
 import com.hh.board.entity.board.BoardRepository;
-import com.hh.board.entity.board.BoardType;
-import com.hh.board.entity.user.BoardTypeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

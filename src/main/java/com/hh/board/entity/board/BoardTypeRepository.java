@@ -1,4 +1,4 @@
-package com.hh.board.entity.user;
+package com.hh.board.entity.board;
 
 import com.hh.board.entity.board.BoardType;
 import org.springframework.data.jpa.repository.JpaRepository;

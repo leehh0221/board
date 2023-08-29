@@ -2,7 +2,7 @@ package com.hh.board.service;
 
 import com.hh.board.entity.user.User;
 import com.hh.board.entity.user.UserRepository;
-import com.hh.board.entity.user.dto.RegisterUserReqDto;
+import com.hh.board.entity.user.dto.RegisterRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,8 +19,8 @@ public class UserService {
     - Token 관련 공부 후 추가 예정
  */
     @Transactional  //
-    public User register(RegisterUserReqDto registerUserReqDto) {
-        User user = registerUserReqDto.toEntity();
+    public User register(RegisterRequestDto registerRequestDto) {
+        User user = registerRequestDto.toEntity();
         return userRepository.save(user);
     }
 }

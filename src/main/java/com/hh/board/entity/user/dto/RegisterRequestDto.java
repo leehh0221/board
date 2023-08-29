@@ -4,7 +4,6 @@ import com.hh.board.entity.user.IsAdmin;
 import com.hh.board.entity.user.Status;
 import com.hh.board.entity.user.User;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegisterUserReqDto {
+public class RegisterRequestDto {
     @NotBlank
     private String userId;
 
