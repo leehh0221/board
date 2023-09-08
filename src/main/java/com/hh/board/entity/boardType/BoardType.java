@@ -1,5 +1,6 @@
-package com.hh.board.entity.board;
+package com.hh.board.entity.boardType;
 
+import com.hh.board.entity.board.Board;
 import com.hh.board.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

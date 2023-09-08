@@ -1,6 +1,8 @@
 package com.hh.board.entity.board;
 
 import com.hh.board.entity.Reply.Reply;
+import com.hh.board.entity.boardType.BoardType;
+import com.hh.board.entity.image.Image;
 import com.hh.board.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.ConstraintMode;
@@ -41,12 +43,15 @@ public class Board {
     @Column
     private String Comment;
 
+    @OneToMany(mappedBy = "image")
+    private List<Image> images;
+
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @jakarta.persistence.ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private User user;
 
     @OneToMany(mappedBy = "reply")
-    private List<Reply> replys;
+    private List<Reply> replies;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -59,8 +64,5 @@ public class Board {
 
     @Column
     private LocalDateTime modifyDate;
-
-
-
 
 }
