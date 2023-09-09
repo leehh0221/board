@@ -30,9 +30,9 @@ public class RegisterRequestDto {
                 .userId(userId)
                 .password(password)
                 .nickName(nickName)
-                .isAdmin(IsAdmin.COMMON_USER)
-                .status(Status.ACTIVE_USER)
-                .createDate(LocalDateTime.now())
+                .isAdmin(IsAdmin.COMMON)
+                .status(Status.ACTIVE)
+                .createDt(LocalDateTime.now())
                 .build();
     }
 

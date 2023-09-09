@@ -30,8 +30,8 @@ public class RegisterResponseDto {
                 .nickName(user.getNickName())
                 .isAdmin(user.getIsAdmin())
                 .status(user.getStatus())
-                .createDate(user.getCreateDate())
-                .exitDate(user.getExitDate())
+                .createDate(user.getCreateDt())
+                .exitDate(user.getExitDt())
                 .build();
     }
 }

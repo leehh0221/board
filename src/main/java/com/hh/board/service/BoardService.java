@@ -1,7 +1,7 @@
 package com.hh.board.service;
 
-import com.hh.board.entity.board.Board;
-import com.hh.board.entity.board.BoardRepository;
+import com.hh.board.entity.post.Post;
+import com.hh.board.entity.post.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     @Transactional
-    public Board register(Board board) {
-        return boardRepository.save(board);
+    public Post register(Post post) {
+        return boardRepository.save(post);
     }
 }

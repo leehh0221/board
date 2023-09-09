@@ -1,6 +1,6 @@
 package com.hh.board.entity.Reply;
 
-import com.hh.board.entity.board.Board;
+import com.hh.board.entity.post.Post;
 import com.hh.board.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.ConstraintMode;
@@ -34,7 +34,7 @@ public class Reply {
 
     @ManyToOne
     @JoinColumn(name = "board_id", foreignKey = @jakarta.persistence.ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-    private Board board;
+    private Post post;
 
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @jakarta.persistence.ForeignKey(value = ConstraintMode.NO_CONSTRAINT))

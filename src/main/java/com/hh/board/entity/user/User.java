@@ -1,6 +1,6 @@
 package com.hh.board.entity.user;
 
-import com.hh.board.entity.board.Board;
+import com.hh.board.entity.post.Post;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -50,14 +50,14 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToMany(mappedBy = "board")
-    private List<Board> boards;
+    @OneToMany(mappedBy = "post")
+    private List<Post> posts;
 
     @Column
-    private LocalDateTime createDate;
+    private LocalDateTime createDt;
 
     @Column
-    private LocalDateTime exitDate;
+    private LocalDateTime exitDt;
 
 }
 

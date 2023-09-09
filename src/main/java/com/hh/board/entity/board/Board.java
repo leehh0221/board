@@ -1,20 +1,15 @@
 package com.hh.board.entity.board;
 
-import com.hh.board.entity.Reply.Reply;
-import com.hh.board.entity.boardType.BoardType;
-import com.hh.board.entity.image.Image;
+import com.hh.board.entity.post.Post;
 import com.hh.board.entity.user.User;
 import jakarta.persistence.Column;
-import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,44 +20,29 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Builder
+@Getter
 @Entity
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "board_type_id")
-    private BoardType boardType;
-
     @Column
-    private String title;
+    private String BoardName;
 
-    @Column
-    private String Comment;
+    @OneToMany(mappedBy = "post")
+    private List<Post> posts;
 
-    @OneToMany(mappedBy = "image")
-    private List<Image> images;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", foreignKey = @jakarta.persistence.ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    @OneToOne(mappedBy = "user") // 생성 유저
     private User user;
 
-    @OneToMany(mappedBy = "reply")
-    private List<Reply> replies;
-
-    @Enumerated(EnumType.STRING)
+    @Enumerated
     private Status status;
 
-    @Enumerated(EnumType.STRING)
-    private Notice notice;
+    @Column
+    private LocalDateTime createDt;
 
     @Column
-    private LocalDateTime createDate;
-
-    @Column
-    private LocalDateTime modifyDate;
-
+    private LocalDateTime updateDt;
 }
