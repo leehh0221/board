@@ -50,15 +50,14 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToMany(mappedBy = "post")
-    private List<Post> posts;
-
     @Column
     private LocalDateTime createDt;
 
     @Column
     private LocalDateTime exitDt;
 
+    @OneToMany(mappedBy = "post")
+    private List<Post> posts;
 }
 
 

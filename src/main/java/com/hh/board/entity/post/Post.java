@@ -33,24 +33,18 @@ public class Post {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "board_type_id")
+    @JoinColumn(name = "board_id")
     private Board board;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @jakarta.persistence.ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private User user;
 
     @Column
     private String title;
 
     @Column
     private String Comment;
-
-//    @OneToMany(mappedBy = "image")
-//    private List<Image> images;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", foreignKey = @jakarta.persistence.ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
-    private User user;
-
-    @OneToMany(mappedBy = "reply")
-    private List<Reply> replies;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -59,9 +53,9 @@ public class Post {
     private Notice notice;
 
     @Column
-    private LocalDateTime createDate;
+    private LocalDateTime createDt;
 
     @Column
-    private LocalDateTime modifyDate;
+    private LocalDateTime updateDt;
 
 }
