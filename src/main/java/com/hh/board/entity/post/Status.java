@@ -9,5 +9,5 @@ public enum Status {
 
     Status(Integer code) { this.code = code; }
 
-    public Boolean isActiveBoard() { return Objects.equals(code, ACTIVE.code); }
+    public Boolean isActivePost() { return Objects.equals(code, ACTIVE.code); }
 }
