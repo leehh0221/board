@@ -29,7 +29,7 @@ public class Board {
     private Long id;
 
     @Column
-    private String BoardName;
+    private String boardName;
 
     @OneToMany(mappedBy = "post")
     private List<Post> posts;
